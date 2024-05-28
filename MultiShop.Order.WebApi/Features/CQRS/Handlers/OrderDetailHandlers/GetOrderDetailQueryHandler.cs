@@ -18,7 +18,7 @@ namespace MultiShop.Order.Application.Features.CQRS.Handlers.OrderDetailHandlers
             _repository = repository;
         }
 
-        public async Task<List<GetOrderDetailQueryResult>> Handle(GetOrderDetailQueryResult query)
+        public async Task<List<GetOrderDetailQueryResult>> Handle()
         {
             var values = await _repository.GetAllAsync();
             return values.Select(x => new GetOrderDetailQueryResult

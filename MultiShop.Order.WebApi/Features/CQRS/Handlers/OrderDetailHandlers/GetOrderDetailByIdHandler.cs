@@ -1,5 +1,6 @@
 ﻿using MultiShop.Order.Application.Features.CQRS.Commands.OrderDetailCommands;
 using MultiShop.Order.Application.Features.CQRS.Queries.AddressQueries;
+using MultiShop.Order.Application.Features.CQRS.Queries.OrderDetailQueries;
 using MultiShop.Order.Application.Features.CQRS.Results.OrderDetailResults;
 using MultiShop.Order.Application.Interfaces;
 using MultiShop.Order.Domain.Entities;
@@ -20,7 +21,7 @@ namespace MultiShop.Order.Application.Features.CQRS.Handlers.OrderDetailHandlers
             _repository = repository;
         }
 
-        public async Task<GetOrderDetailByIdQueryResult> Handle(GetAddressByIdQuery query)
+        public async Task<GetOrderDetailByIdQueryResult> Handle(GetOrderDetailByIdQuery query)
         {
             var value = await _repository.GetByIdAsync(query.Id);
             return new GetOrderDetailByIdQueryResult
