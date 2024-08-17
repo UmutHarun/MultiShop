@@ -3,16 +3,15 @@ using MultiShop.Order.Domain.Entities;
 
 namespace MultiShop.Order.Persistence.Context
 {
-    public class OrderContext : DbContext
-    {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Server=...;initial Catalog=MultiShopOrderDb;integrated Security=true;");
-        }
+	public class OrderContext : DbContext
+	{
+		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+		{
+			optionsBuilder.UseSqlServer("Server=localhost,1440;initial Catalog=MultiShopOrderDb;User=sa;Password=123456aA*;TrustServerCertificate=True");
+		}
 
-        public DbSet<Address> Addresses { get; set;}
-        public DbSet<OrderDetail> OrderDetails { get; set;}
-        public DbSet<Ordering> Orderings { get; set;}
-    }
+		public DbSet<Address> Addresses { get; set; }
+		public DbSet<OrderDetail> OrderDetails { get; set; }
+		public DbSet<Ordering> Orderings { get; set; }
+	}
 }

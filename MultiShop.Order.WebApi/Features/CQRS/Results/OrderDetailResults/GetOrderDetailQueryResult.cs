@@ -14,6 +14,6 @@ namespace MultiShop.Order.Application.Features.CQRS.Results.OrderDetailResults
         public decimal ProductPrice { get; set; }
         public decimal ProductAmount { get; set; }
         public decimal ProductTotalPrice { get; set; }
-        public decimal OrderingId { get; set; }
+        public int OrderingId { get; set; }
     }
 }
