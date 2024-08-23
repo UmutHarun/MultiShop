@@ -27,7 +27,9 @@ namespace MultiShop.Basket.Services
 
 		public async Task SaveBasket(BasketTotalDto basket)
 		{
-			await _redisService.GetDb().StringSetAsync(basket.UserId,JsonSerializer.Serialize(basket));
+			string serializedBasket = JsonSerializer.Serialize(basket);
+			var db = _redisService.GetDb();
+			await db.StringSetAsync(basket.UserId, serializedBasket);
 		}
 	}
 }
