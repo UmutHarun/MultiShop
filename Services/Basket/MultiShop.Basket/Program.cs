@@ -34,6 +34,7 @@ builder.Services.AddSingleton<RedisService>(sp =>
 	return redis;
 });
 
+
 builder.Services.AddControllers(opt =>
 {
 	opt.Filters.Add(new AuthorizeFilter(requireAuthorizePolicy));

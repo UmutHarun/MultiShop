@@ -1,6 +1,4 @@
-﻿using System.Security.Claims;
-
-namespace MultiShop.Basket.LoginServices
+﻿namespace MultiShop.Basket.LoginServices
 {
 	public class LoginService : ILoginService
 	{
